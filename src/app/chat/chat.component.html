@@ -1,0 +1,153 @@
+
+<!--<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Chat app</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<main class="chat">
+    <div class="container">
+        <div class="chat-content">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
+                        <strong>{{chatMessage.user}}: </strong>
+                        <span>{{chatMessage.message}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+            <div class="chat-send row">
+                <div class="col-2">
+                    <input type="text" class="form-control" name="user" id="input-user" ngModel>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="message" id="input-message" ngModel>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</main>
+-->
+
+
+<section class="content"> 
+    <div class="container-fluid">
+        
+
+        <app-sidebar-admin></app-sidebar-admin>
+    
+    </div> 
+    </section>
+    
+<main class="chat">
+<div class="bg-white border-radius-4 box-shadow mb-30">
+	<div class="row no-gutters">
+		<div class="col-lg-3 col-md-4 col-sm-12">
+			<div class="chat-list bg-light-gray">
+				<div class="chat-search">
+					<span class="ti-search"></span>
+					<input type="text" placeholder="Search Contact">
+				</div>
+				<div class="notification-list chat-notification-list customscroll">
+					<ul>
+						<li>
+							<a href="#">
+								<img src="vendors/images/img.jpg" alt="">
+								<h3 class="clearfix">John Doe</h3>
+								<p><i class="fa fa-circle text-light-green"></i> online</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-9 col-md-8 col-sm-12">
+			<div class="chat-detail">
+				<div class="chat-profile-header clearfix">
+					<div class="left">
+						<div class="clearfix">
+							<div class="chat-profile-photo">
+								<img src="vendors/images/profile-photo.jpg" alt="">
+							</div>
+							<div class="chat-profile-name">
+								<h3>Rachel Curtis</h3>
+								<span>New York, USA</span>
+							</div>
+						</div>
+					</div>
+					<div class="right text-right">
+						<div class="dropdown">
+							<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+								Setting
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Export Chat</a>
+								<a class="dropdown-item" href="#">Search</a>
+								<a class="dropdown-item text-light-orange" href="#">Delete Chat</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chat-box">
+					<div class="chat-desc customscroll">
+						<ul>
+							
+							<li class="clearfix admin_chat">
+								<span class="chat-img">
+									<img src="vendors/images/chat-img2.jpg" alt="">
+								</span>
+								<div class="chat-body clearfix">
+									<li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
+										<strong>{{chatMessage.user}}: </strong>
+										<span>{{chatMessage.message}}</span>
+									</li>
+									<div class="chat_time">09:40PM</div>
+								</div>
+							</li>
+						
+							
+						
+							
+						
+						
+							
+							
+						
+						</ul>
+					</div>
+					<form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+					<div class="chat-footer">
+						<div class="file-upload"><a href="#"><i class="fa fa-paperclip"></i></a></div>
+						<div class="chat_text_area">
+							<textarea  placeholder = "your message" type="text" class="form-control" name="message" id="input-message" ngModel></textarea>
+							<textarea placeholder ="your name" type="text" class="form-control" name="user" id="input-user" ngModel></textarea>
+								
+							
+						</div>
+						<div class="chat_send">
+							<button class="btn btn-link" type="submit"><i class="icon-copy ion-paper-airplane"></i></button>
+						</div>
+
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>

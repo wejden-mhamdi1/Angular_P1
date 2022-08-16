@@ -1,0 +1,86 @@
+<div class="main-container">
+    <div class="row clearfix">
+     
+
+ 
+<!--user
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Sexe</th>
+            >
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of listeUsers">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.moyenne}}</td>
+            <td>{{user.point}}</td>
+          
+          </tr>
+          
+    </tbody>
+    </table>
+    </div>
+  
+</div>
+-->
+<div class="contact-directory-box">
+    <div class="contact-dire-info text-center">
+        
+<div class="container">
+    <div class="profile-sort-desc">
+        <ng-container *ngFor="let u of EvaluateList">
+            
+            <div class="card col-md-3">
+                
+                <div class="contact-avatar">
+                    <span>
+                        <img src="../../assets/admin/vendors/images/photo2.jpg" alt="">
+                    </span>
+                </div>
+                <div class="contact-name">
+                      
+                    <div class="work text-success"><i class="ion-android-person"></i> employe</div>
+                    </div>
+                    <p>notes and descriptions of each employee</p>
+                <h2>Description of employe   :  {{u.description}}</h2>
+                <br>
+                <h3>NOTE : {{u.note}}</h3>
+               <!-- <h3> {{u.UserModule.firstName}}</h3>-->
+                <br>
+               
+                <div class="view-contact">
+                    <a href="#">View Profile</a>
+                </div>
+                
+            </div>
+            
+            
+        </ng-container>
+
+    </div>
+    </div>
+    
+</div>
+</div>
+<!--liste des employee trie avec gold-->
+<button (click)="getListTriGold(2)" type="button" class="btn btn-outline-primary">tri</button>
+
+ 
+
+
+
+
+
+
+
+
+

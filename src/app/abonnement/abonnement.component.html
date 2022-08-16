@@ -1,0 +1,202 @@
+
+<div class="main-container">
+<section id="about">
+    <div class="container">
+<div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="about-col">
+      <div class="img">
+        <img src="img/about-plan.jpg" alt="" class="img-fluid">
+        <div class="icon"><i class="ion-ios-list-outline"></i></div>
+      </div>
+      <h2 class="title"><a href="#">Our Plan</a></h2>
+      
+      <tbody *ngFor="let u of AbonementList">
+        <span class="posted_on">{{u.dateDebut | date:'dd/MM/yyyy' }}</span>
+        <br>
+        <span class="posted_on">{{u.dateFin | date:'dd/MM/yyyy' }}</span>
+        <span class="comment"><a href="">{{u.id}}<i class="icon-speech-bubble"></i></a></span>
+        <p> go quickly order</p>
+        
+        <a class="accordion-header" id="headingOne">For more information To buay
+
+
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ">
+                {{u.pourcentage}} %
+               
+              </span>
+        </a>
+        <div class="subtotal ft-product-subtotal-price">
+            <button (click)="sentOrder(u)" (click)="openModal(template)" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  order</button> 
+            </div>
+       
+        
+       
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+           
+               
+            <div class="accordion-body">
+                <div class="title">
+                    <h3><a href="#">Price {{u.prix}}</a></h3>
+                   
+                </div>
+                
+                <br>
+                <div class="accordion-body">
+                    <div class="title">
+                        <h3><a href="#"> Type  {{u.typeAbonnement}} </a></h3>
+                       
+                    </div>
+                </div>
+<div class="resume">
+                    <div class="row total ft-total" >
+                        <label >Total :</label>
+                        <div class="ft-total-panel">
+                            <span dir="ltr" data-price="172">{{u.prix}}.00&nbsp;DT</span> 
+                        </div>
+                    </div>
+               </div>
+               <ng-template #template>
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left">Modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to buy</p>
+                  <form #methodForm="ngForm" (ngSubmit)="checkMethod(methodForm,template1)">
+                            <div>
+                                <input type="checkbox" id="carte" name="carte" ngModel>
+                                <label for="scales">carte</label>
+                            </div>
+                            
+                            <div>
+                                <input type="checkbox" id="point" name="point" ngModel>
+                                <label for="horns">loyalty point</label>
+                            </div>
+                       
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+                            <button class="btn btn-danger" data-dismiss="modal" type="submit" (click)="modalRef.hide()" >Yes</button>
+                        </div>
+                 </form>      
+              </div>
+              </ng-template>
+              <ng-template #template1>
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left">Modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>point</p>
+                  <form #pointForm="ngForm" (ngSubmit)="checkMethod(pointForm,template1)">
+                         
+                       
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+         
+                        </div>
+                 </form>      
+              </div>
+              </ng-template>
+    </div>
+  </div>
+  <!--
+
+*********************************************************** -->
+<!--
+<section class="intro-single">
+    <div class="container">
+      <div class="row">
+         
+                <form  class="product" *ngFor="let x of AbonementList">
+                    <div >    
+                        
+                          
+                                
+                                <div class="unit-price ft-product-unit-price">
+                                    <span  class="current"><span>{{x.prix}}.00&nbsp;DT</span> </span> 
+                            
+                                </div>
+
+                                <div class="subtotal ft-product-subtotal-price">
+                                <a  (click)="sentOrder(x)" (click)="openModal(template)">carte</a>  
+            
+                                    
+                                </div>
+                                <div class="resume">
+                                    <div class="row total ft-total" >
+                                        <label >Total :</label>
+                                        <div class="ft-total-panel">
+                                            <span dir="ltr" data-price="172">{{x.prix}}.00&nbsp;DT</span> 
+                                        </div>
+                                    </div>
+                               </div>
+                 </div>    
+               </form>
+          
+        
+      </div>
+    </div>
+    <div class="order-footer">
+        <div class="container">
+         
+            <a [routerLink]="['/payment']" payment class="osh-btn -primary">
+                <span>Finalize your order</span>
+            </a>
+        </div>
+    </div>
+  </section>
+  -->
+<!--lkmelaa-->
+  <!-- choix method Modal -->
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to buy</p>
+      <form #methodForm="ngForm" (ngSubmit)="checkMethod(methodForm,template1)">
+                <div>
+                    <input type="checkbox" id="carte" name="carte" ngModel>
+                    <label for="scales">carte</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="point" name="point" ngModel>
+                    <label for="horns">loyalty point</label>
+                </div>
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+                <button class="btn btn-danger" data-dismiss="modal" type="submit" (click)="modalRef.hide()" >Yes</button>
+            </div>
+     </form>      
+  </div>
+  </ng-template>
+
+  <!-- confirmer Modal -->
+<ng-template #template1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>point</p>
+      <form #pointForm="ngForm" (ngSubmit)="checkMethod(pointForm,template1)">
+               
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+              <!-- <button class="btn btn-danger" data-dismiss="modal" type="submit" (click)="buyWithLoyaltyPoint()">Yes</button>--> 
+            </div>
+     </form>      
+  </div>
+  </ng-template>

@@ -1,0 +1,253 @@
+<!--l'image -->
+<div class="main-container">
+  <div class="row clearfix">
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+      <div class="da-card">
+        <div class="da-card-photo">
+          <img src="../../assets/admin/vendors/images/photo1.jpg" alt="">
+          <div class="da-overlay">
+            <div class="da-social">
+              <ul class="clearfix">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--FIN l'image -->
+  <div class="pd-ltr-20"> 
+<!--ajout abonnement-->
+<div class="body">
+    <form class="form-horizontal">
+    <div class="row clearfix">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label for="prix">prix</label>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col- xs-7"><div class="form-group"> <div class="form-line">
+      <input name="prix" [(ngModel)]="abonnement.prix" type="number" id="prix" class="form-control" placeholder="Enter your price"></div></div></div></div>
+    <div class="row clearfix"><div class="col-lg-2 col-md-2 col-sm-4 col-xs -5 form-control-label">
+    <label for="pourcentage">pourcentage</label></div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7"><div class="form-group"><div class="form-line">
+    <input name="pourcentage" [(ngModel)]="abonnement.pourcentage" type="number" id="pourcentage" class="form-control" placeholder="Enter your  pourcentage"></div> </div> </div></div>
+    <div class="row clearfix"><div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+    <label for="dateDebut">dateDebut</label></div>
+    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7"> <div class="form-group"> <div class="form-line">
+        <input name="dateDebut" [(ngModel)]="abonnement.dateDebut" type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdateDebut" placeholder="dateDebut" name="dateDebut" ></div></div></div></div>
+        <div class="row clearfix"><div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+            <label for="dateFin">dateFin</label> </div>
+            <div class="col-lg-10 col-md-10 col-sm-8 col- xs-7">   <div class="form-group"><div class="form-line">
+            <input name="dateFin" [(ngModel)]="abonnement.dateFin" type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdatefin" placeholder="datefin" name="dateFin" ></div></div> </div> </div>
+            <button (click)="ajoutAbonnement1()" type="button" class="btn btn-primary m-t-15 waves-effect">Add</button>
+</form>
+</div>
+
+<!--Remise abonnement
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+       
+       
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    
+        <hr>
+<div class="container bootstrap snippets bootdey ">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>dateDebut</span></th>
+                                <th><span>dateFin</span></th>
+                                <th class="text-center"><span>pourcentage</span></th>
+                                <th><span>prix</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let u of AbonementList">
+                                    <td>
+                                        
+                                        <a href="#" class="user-link">{{u.dateDebut  }}</a>
+                                        
+                                    </td>
+                                    <td>{{u.dateFin  }}</td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{u.pourcentage}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{u.prix}}</a>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{u.id}}</a>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <button (click)="remiseAbonnement(u.id)" type="button" class="btn btn-prima
+                                        ry">Delete/remise</button>
+                                    
+                                    </td>
+                                   PDF
+                                    <td style="width: 20%;">
+                                    <button (click)="exportPdf(u.id)" type="button" class="btn btn-prima ry">Download</button>
+                                  </td>
+                                  
+                                  <button (click)="dorappel(u.id )" type="button" class="btn btn-prima ry">rappel</button>
+                                  <button class="btn"  (click)="dosendsms(u.id)"><i class="fa fa-sms"></i>rappelsms</button>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+-->
+  <!--ajout pourcentage-->
+  
+    <!--
+    <div class="modal-body">
+      <p>point</p>
+      <form  #myform="ngForm" (ngSubmit)="addPourcentage(myform)">
+        <div class="form-group">
+          <label for="formGroupdatedebut">date debut</label>
+          <input type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdatedebut" placeholder="datedebut" name="dateFin" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="formGroupdescription">date fin</label>
+          <input type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdatefin" placeholder="datefin" name="dateDebut" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="formGroupvalue"> prix</label>
+            <input type="number" class="form-control" id="formGroupvalue" placeholder="prix" name="prix"ngModel>
+          </div>
+          <div class="form-group">
+            <label for="formGroupvalue2"> pourcentage</label>
+            <input type="number" class="form-control" id="formGroupvalue" placeholder="pourcentage" name="pourcentage"ngModel>
+          </div>
+          
+          <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">add</button>
+            </div>
+      </form>
+  </div>
+  -->
+
+   <!--sms
+    <div class="col-12">
+        <div style="text-align: center;margin-top:  50px;">
+         <div class="col-3" style="display: inline-block;cursor: pointer;margin-left: 10px ;">
+            <button class="btn"  (click)="dosendsms(pack)"><i class="fa fa-sms"></i>rappelsms</button>
+            
+
+        </div>
+        </div>
+    </div>
+</div>
+-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="timeline mb-30">
+  <ul>
+    <li>
+      <div class="timeline-date">
+        To Manage
+      </div>
+      <div class="timeline-desc card-box">
+        <div class="pd-20">
+          si la date d'abonnement expiré l'abonnement supprimer sinon executer le pourcentage 
+        </div>
+      </div>
+    </li>
+
+</ul>
+</div>
+
+  <ul class="row">
+      <li class="col-lg-4 col-md-6 col-sm-4" *ngFor="let u of AbonementList">
+        
+          <div class="product-box mb-300">
+              
+              <div class="product-caption">
+                
+                <tbody>
+                 
+                                
+                  <tr >
+                    
+                    <div class="producct-img"><img src="../../assets/admin//vendors/images/product-img1.jpg" alt="">
+                  
+                    
+                      
+                  <h4><a href="#">{{u.id}} Subscription</a></h4>
+                  <div class="price">
+                    <ins>dDebuts</ins>{{u.dateDebut  }}
+                    <ins>dFin</ins>{{u.dateFin  }}
+                    {{u.pourcentage}}
+                    {{u.prix}}
+                 
+                    
+                      <button (click)="exportPdf(u.id)" type="button" class="btn btn-outline-primary">Download</button>
+                 
+                    
+                    <button (click)="dorappel(u.id )" type="button" class="btn btn-outline-primary">rappel</button>
+                    <button (click)="dosendsms(u.id)" type="button" class="btn btn-outline-primary">rappelsms</button>
+                           
+               
+                  </div>
+                 
+                </div>
+                
+                </tbody>
+                
+                
+                 
+              </div>
+          </div>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer-wrap pd-20 mb-20 card-box">
+DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+</div>
+
+
+
+
+    
+
+    
+   
+
